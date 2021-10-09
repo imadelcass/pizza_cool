@@ -1,0 +1,262 @@
+* {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+$br: 1px solid black;
+$shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+.header {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    box-shadow: $shadow;
+    .brand {
+        flex: 1;
+        font-weight: 700;
+    }
+    .nav {
+        flex: 2;
+        display: flex;
+        justify-content: space-around;
+        .link {
+            text-decoration: none;
+            list-style: none;
+        }
+    }
+}
+.categories {
+    display: flex;
+    justify-content: space-around;
+    .category {
+        padding: 20px 20px 0px 20px;
+        a {
+            text-decoration: none;
+        }
+    }
+    .category_active {
+        background-color: rgba(11, 95, 204, 0.178);
+        border-bottom: rgb(11, 95, 204) 2px solid;
+    }
+}
+.dishes {
+    h2 {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .row {
+        .card {
+            min-width: 70px;
+        }
+    }
+}
+.form-flex {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    div {
+        :nth-child(1) {
+            flex: 2;
+        }
+        :nth-child(2) {
+            flex: 1;
+        }
+    }
+}
+.register {
+    margin-top: 50px;
+    form {
+        padding: 40px;
+        width: 400px;
+        margin: auto;
+        box-shadow: $shadow;
+        border-radius: 5px;
+        .mb-3 {
+            .error {
+                color: red;
+            }
+        }
+        button {
+            width: 100%;
+        }
+    }
+}
+.admin__section {
+    .categories {
+        display: inline;
+        .row {
+            .card {
+                img {
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                }
+                .category_id {
+                    display: none;
+                }
+                .edit {
+                    color: white;
+                    text-align: center;
+                    width: 100%;
+                    border: 1px solid #5bb7ecf5;
+                    background-color: #71b4f3de;
+                }
+            }
+            .upload_img {
+                display: none;
+            }
+        }
+    }
+}
+.category {
+    width: 500px !important;
+    margin: auto;
+    margin-top: 50px !important;
+    .card {
+        padding: 20px;
+    }
+    .upload_img {
+        display: none;
+    }
+    .img_label {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        img {
+            width: 200px;
+        }
+    }
+    .input_name {
+        margin-bottom: 10px;
+    }
+    .btns {
+        display: flex;
+        .remove {
+            flex: 1;
+            border: 1px solid #5bc3ec;
+            background-color: #5bc3ecab;
+        }
+        .save {
+            flex: 1;
+            border: 1px solid #5bb7ecf5;
+            background-color: #71b4f3de;
+        }
+    }
+}
+.likes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button.like {
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+        line-heigth: 50px;
+        border-radius: 50%;
+        color: rgba(0, 150, 136, 1);
+        background-color: rgba(38, 166, 154, 0.3);
+        border-color: rgba(0, 150, 136, 1);
+        border-width: 1px;
+        font-size: 15px;
+    }
+
+    button.dislike {
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+        line-heigth: 50px;
+        border-radius: 50%;
+        color: rgba(255, 82, 82, 1);
+        background-color: rgba(255, 138, 128, 0.3);
+        border-color: rgba(255, 82, 82, 1);
+        border-width: 1px;
+        font-size: 15px;
+    }
+}
+.comments_display {
+    max-height: 600px;
+    overflow-y: scroll;
+    .comment_display {
+        box-shadow: $shadow;
+        margin-bottom: 10px;
+        padding: 10px 0;
+        .comment_upper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            .user {
+                display: flex;
+                align-items: center;
+                .user_photo {
+                    margin-right: 5px;
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 20px;
+                        object-fit: cover;
+                    }
+                }
+                .user_name {
+                    margin-right: 20px;
+                    a {
+                        text-decoration: none;
+                        font-weight: 700;
+                    }
+                }
+                .comment_body {
+                    font-family: cursive;
+                    font-weight: 900;
+                }
+            }
+            .created_at {
+                color: gray;
+                font-size: 12px;
+            }
+        }
+        .comment_config {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px 0 38px;
+            .del_rep_trans {
+                display: flex;
+                align-items: center;
+                form {
+                    button {
+                        color: gray;
+                        font-size: 12px;
+                        border: none;
+                        background: none;
+                        outline: none;
+                        margin-right: 10px;
+                        &:hover {
+                            color: blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.comment_write {
+    width: 100%;
+    form {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        input {
+            flex: 1;
+            height: 50px;
+            outline: none;
+            padding-left: 15px;
+        }
+        button {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            height: 50px;
+        }
+    }
+}
